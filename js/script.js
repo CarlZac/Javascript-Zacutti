@@ -1,3 +1,21 @@
+class producto{
+    constructor(id, estilo, precio, volumen){
+        this.id = id;
+        this.estilo = estilo;
+        this.precio = precio;
+        this.volumen = volumen;
+    }
+}
+
+const productos = [
+    new producto(1, 'Clásico', 750, 750),
+    new producto(2, 'Black', 750, 750),
+    new producto(3, 'Pyment', 750, 750),
+    new producto(4, 'Brùnt', 750, 750),
+    new producto(5, 'Bittur', 750, 750),
+    new producto(6, 'Idunn', 350, 200)
+]
+
 let userName = prompt('Ingresá tu nombre!');
 let userAge = parseInt(prompt('Hola ' + userName + ' ahora ingresá tu edad!'));
 
@@ -5,45 +23,6 @@ while (userAge < 18 || userAge == null || /\D/.test(userAge) || userAge == ""){
     alert('Para poder comprar nuestros productos tenés que ser mayor de 18 años.');
     userAge = parseInt(prompt(userName + ' volvé a ingresar tu edad.'));
 }
-
-const productos = [
-    {
-        id: 1,
-        estilo: 'Clásico',
-        precio: 750,
-        volumen: 750
-    },
-    {
-        id: 2,
-        estilo: 'Black',
-        precio: 750,
-        volumen: 750
-    },
-    {
-        id: 3,
-        estilo: 'Pyment',
-        precio: 750,
-        volumen: 750
-    },
-    {
-        id: 4,
-        estilo: 'Brùnt',
-        precio: 750,
-        volumen: 750
-    },
-    {
-        id: 5,
-        estilo: 'Bittur',
-        precio: 750,
-        volumen: 750
-    },
-    {
-        id: 6,
-        estilo: 'Idunn',
-        precio: 350,
-        volumen: 200
-    }
-];
 
 let menu = '';
 menu += '¡Bienvenido a la Tienda Hidromielera!\n';
