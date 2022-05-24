@@ -1,20 +1,29 @@
 class producto{
-    constructor(id, estilo, precio, volumen){
+    constructor(id, estilo, precio, volumen, stock){
         this.id = id;
         this.estilo = estilo;
         this.precio = precio;
         this.volumen = volumen;
+        this.stock = stock;
     }
 }
 
 const productos = [
-    new producto(1, 'Clásico', 750, 750),
-    new producto(2, 'Black', 750, 750),
-    new producto(3, 'Pyment', 750, 750),
-    new producto(4, 'Brùnt', 750, 750),
-    new producto(5, 'Bittur', 750, 750),
-    new producto(6, 'Idunn', 350, 200)
+    new producto(1, 'Clásico', 750, 750, 60),
+    new producto(2, 'Black', 750, 750, 30),
+    new producto(3, 'Pyment', 750, 750, 30),
+    new producto(4, 'Brùnt', 750, 750, 50),
+    new producto(5, 'Bittur', 750, 750, 0),
+    new producto(6, 'Idunn', 350, 200, 25)
 ]
+
+function mostrarStock(array) {
+    let lista = '';
+    array.forEach(element => {
+        lista += 'Estilo: ' + element.estilo + ' - Stock: ' + element.stock + '\n';
+    });
+    return lista;
+}
 
 let userName = prompt('Ingresá tu nombre!');
 let userAge = parseInt(prompt('Hola ' + userName + ' ahora ingresá tu edad!'));
@@ -29,6 +38,7 @@ menu += '¡Bienvenido a la Tienda Hidromielera!\n';
 menu += '1 - Selecciona un producto\n';
 menu += '2 - Eliminar un producto\n'
 menu += '3 - Mostrar mi carrito\n';
+menu += '4 - Ver stock de botellas\n'
 menu += '0 - Finalizar compra\n';
 
 const carrito = [];
@@ -45,6 +55,9 @@ const tienda = () => {
                 break;
             case 3:
                 mostrarCarrito();
+                break;
+            case 4:
+                alert(mostrarStock(productos));
                 break;
             case 0:
                 alert('Finalizando su compra.');
