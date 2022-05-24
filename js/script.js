@@ -84,12 +84,9 @@ const agregarProducto = () =>{
         alert(userName+' por favor, ingresá una opción válida.');
         seleccion = parseInt(prompt(lista));
     }
-    while (seleccion !== 0) {
-        seleccion = parseInt(prompt(lista));
-        carrito.push(productos[seleccion - 1]);
-        alert("Producto agregado con exito!");
-        console.log(carrito);
-    }   
+    carrito.push(productos[seleccion - 1]);
+    alert("Producto agregado con exito!");
+    console.log(carrito);
 }
 
 const eliminarProducto = () =>{
