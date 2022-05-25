@@ -39,6 +39,7 @@ menu += '1 - Selecciona un producto\n';
 menu += '2 - Eliminar un producto\n'
 menu += '3 - Mostrar mi carrito\n';
 menu += '4 - Ver stock de botellas\n'
+menu += '5 - Fijate si está el estilo que querés!\n'
 menu += '0 - Finalizar compra\n';
 
 const carrito = [];
@@ -58,6 +59,9 @@ const tienda = () => {
                 break;
             case 4:
                 alert(mostrarStock(productos));
+                break;
+            case 5:
+                buscarEstilo();
                 break;
             case 0:
                 alert('Finalizando su compra.');
@@ -111,6 +115,17 @@ const mostrarCarrito = () =>{
         lista += index++ + '- ' + producto.estilo + '\n';
     }
     alert(lista);
+}
+
+const buscarEstilo = () =>{
+    let seleccion = prompt('Escribí el nombre del estilo que querés:');
+    const filtrado = productos.filter((producto) => producto.estilo.toLowerCase().includes(seleccion.toLowerCase()));
+    if (filtrado.length > 0) {
+    const imprimible = filtrado.map((producto) =>producto.estilo);
+    alert("Estos son los estilos con los que contamos que coinciden parcial o totalmente con tu búsqueda:\n- " + imprimible.join('\n- '));
+    } else {
+    alert('No contamos con esos estilos en en este momento.');
+    }
 }
 
 const totalCompra = () =>{
